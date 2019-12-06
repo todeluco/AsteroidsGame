@@ -1,4 +1,5 @@
 Spaceship bob = new Spaceship();
+Bullet[] pew = new Bullet[0];
 Star[] spaceSky = new Star[200];
 ArrayList <Asteroid> rocks = new ArrayList <Asteroid>();
 public void setup() 
