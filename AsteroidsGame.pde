@@ -1,5 +1,5 @@
 Spaceship bob = new Spaceship();
-Bullet[] pew = new Bullet[0];
+Bullet sue = new Bullet(bob);
 Star[] spaceSky = new Star[200];
 ArrayList <Asteroid> rocks = new ArrayList <Asteroid>();
 public void setup() 
@@ -39,5 +39,8 @@ public void keyPressed(){
 	}
 	if(key == 'd'){
 		bob.turn(10);
+	}
+	if(key == 'b'){
+		sue.show();
 	}
 }
