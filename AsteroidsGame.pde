@@ -2,13 +2,15 @@ Spaceship bob = new Spaceship();
 ArrayList <Bullet> bullets = new ArrayList <Bullet>();
 Star[] spaceSky = new Star[200];
 ArrayList <Asteroid> rocks = new ArrayList <Asteroid>();
+float bx,by,rx,ry;
+
 public void setup() 
 {
   size(500,500);
   for(int i = 0; i < spaceSky.length; i++){
   	spaceSky[i] = new Star();
   }
-  for(int i = 0; i <= 5; i++){
+  for(int i = 0; i <= 8; i++){
   	rocks.add(new Asteroid());
   }
 }
@@ -25,6 +27,20 @@ public void draw()
 	for(int i = 0; i < bullets.size(); i++){
 		bullets.get(i).show();
 		bullets.get(i).move();
+	}
+	for(int i = bullets.size(); i>0; i--){
+		for(int x = rocks.size(); i>0; i--){
+			bx = (float)(bullets.get(i-1).getMyCenterX());
+			by = (float)(bullets.get(i-1).getMyCenterY());
+			rx = (float)(rocks.get(x-1).getMyCenterXRock());
+			ry = (float)(rocks.get(x-1).getMyCenterYRock());
+
+			if(dist(bx,by,rx,ry) < 30){
+				bullets.remove(i);
+				rocks.remove(x);
+				break;
+			}
+		}
 	}
 	bob.show();
 	bob.move();

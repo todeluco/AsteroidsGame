@@ -11,4 +11,16 @@ class Bullet extends Floater{
 		fill(255,0,0);
 		ellipse(Math.round(myCenterX),Math.round(myCenterY),5,5);
 	}
+	public double getMyCenterX(){
+		return myCenterX;
+	}
+	public double getMyCenterY(){
+		return myCenterY;
+	}
+	public void setMyCenterX(double x){
+		myCenterX = x;
+	}
+	public void setMyCenterY(double y){
+		myCenterY = y;
+	}
 }
